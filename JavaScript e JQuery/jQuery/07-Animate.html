@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animate - jQuery</title>
+
+  <!--CSS-->
+  <style>
+    div{
+      width: 24px;
+      height: 24px;
+      background-color: pink;
+    }
+  </style>
+
+  <!--jQuery-->
+  <script src="jquery-3.6.4.min.js"></script>
+
+  <!--Script-->
+  <script>
+
+    //Ao carregar o documento:
+    // escrever isso $(document).ready(function(){ }) em todos os documentos que for usar jQuery. Lá dentro que vai escrever tudo.
+
+    $(document).ready(function(){
+
+      //Efeito:
+      $("button").click(function(){
+        $("div").animate({ /*a partir daqui, coloca comandos CSS*/
+          width:"1400px",
+          height:"1400px"
+
+        });
+      })
+
+
+    })
+  </script>
+
+</head>
+<body>
+  
+  <button>Clique aqui</button>
+
+
+  <div></div>
+
+
+</body>
+</html>

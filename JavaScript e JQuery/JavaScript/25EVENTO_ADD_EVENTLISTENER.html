@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento Alteração  2</title>
+
+  <style>
+    .wrapper{
+      position: relative;
+      top: 40vh;
+    }
+    #button{
+      border: 5px solid #FFAB33;
+      width: 200px;
+      text-align: center;
+      padding: 10px;
+      font-size: 30px;
+      cursor: pointer;
+      margin: auto;
+      background: #FF5733;
+    }
+
+    #button:hover{
+      background: #DFF30B;
+    }
+
+    #message{
+      font-size: 26px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .hide{
+      visibility: hidden;
+    }
+
+    .reveal{
+      visibility: visible;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  
+  <div class="wrapper">
+    <div id="message" class="hide"><!-- classe já está definida hide e no CSS está configurado para classe hide visibility hidden. Ao iniciar a página, portanto, não aparece-->
+      You won't see this message until after you clicked the button. Click again to hide me!
+    </div>
+    <div id="button">
+      Click me!
+    </div>
+  </div>
+ 
+ <script>
+  
+  //https://www.freecodecamp.org/portuguese/news/o-metodo-addeventlistener-exemplo-de-codigo-com-listener-de-eventos-em-javascript/
+  
+  //O JavaScript fornece um manipulador de evento (event handler) na forma do 
+  //método addEventListener(). Este handler pode ser anexado ao elemento HTML 
+  //específico para o qual você deseja monitorar eventos. Cada elemento pode ter 
+  //mais de um handler anexado.
+  
+  //Sintaxe de addEventListener()
+  
+  //target.addEventListener(event, function, useCapture)
+  
+  //target: o elemento HTML ao qual você deseja adicionar seu manipulador de eventos 
+  //(event handler). Este elemento existe como parte do Document Object Model (DOM). 
+  //Aprenda como selecionar um elemento DOM (texto e curso em inglês).
+  
+  //event: uma string que especifica o nome do evento. Já mencionamos eventos de 
+  //load e click. Para os curiosos, aqui está uma lista completa de eventos do 
+  //DOM do HTML (em inglês).
+  
+  //function: especifica a função a ser executada quando o evento for detectado. 
+  //Esta é a magia que pode permitir que as suas páginas web mudem dinamicamente.
+  
+  //useCapture: um valor booleano opcional (verdadeiro ou falso) que especifica 
+  //se o evento deve ser executado na fase de captura ou de envio aos 
+  //eventos pais (texto em inglês). No caso de elementos HTML aninhados 
+  //(como um img dentro de um div) com manipuladores de eventos anexados, este valor 
+  //determina qual evento é executado primeiro. Por padrão, ele é definido como falso, o que significa que o manipulador de eventos do elemento HTML mais interno é executado primeiro (fase de envio).
+  
+ 
+  //******* FUNÇÃO: *******
+  
+  let button = document.querySelector('#button');
+  let msg = document.querySelector('#message');
+  
+  button.addEventListener('click', ()=>{
+  msg.classList.toggle('reveal');
+  })
+  
+  //classList é uma propriedade que permite acessar e manipular as classes de um
+  // elemento HTML em JavaScript. A propriedade classList inclui vários métodos, 
+  //incluindo o método toggle, que adiciona uma classe a um elemento se ela não 
+  //estiver presente e a remove se já estiver presente.
+
+  //ATENÇÃO: MÉTODO TOGGLE = ADICIONA UMA CLASSE A UM ELEMENTO SE ELA NÃO ESTIVER PRESENTE
+  //ENTÃO QUANDO CLICA ADICIONA REVEAL... E QUANDO CLICA NOVAMENTE TOGGLE REMOVE REVEAL 
+  //PORQUE ELA ESTÁ PRESENTE
+
+  //No código fornecido, a função toggle é usada para alternar entre as classes "hide" 
+  //e "reveal" do elemento com o ID "message" quando o botão com o ID "button" é clicado.
+  // Quando o botão é clicado, a classe "hide" é removida do elemento "message" e a classe
+  // "reveal" é adicionada. Quando o botão é clicado novamente, a classe "reveal" é removida 
+  //e a classe "hide" é adicionada.
+
+  //As classes "hide" e "reveal" são usadas para controlar a visibilidade do elemento 
+  //"message". Quando a classe "hide" é aplicada, o elemento é ocultado e quando a 
+  //classe "reveal" é aplicada, o elemento é exibido.
+
+
+  </script>
+
+</body>
+</html>
